@@ -1,37 +1,80 @@
-SRCS = ft_printf.c
-#BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
-				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
-				ft_lstclear.c ft_lstiter.c ft_lstmap.c
-OBJS = ${SRCS:.c=.o}
-#BONUS_OBJS = ${BONUS_SRCS:.c=.o}
-INCS = includes/
-NAME = libftprintf.a
-CC = gcc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
-LIBC = ar rcs
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
+NAME	= libftprintf.a
 
-${NAME}: 	${OBJS}
-			${LIBC} ${NAME} ${OBJS}
+SRCS	= ft_printf.c \
 
-all:	
-		${MAKE} all -C ./libft 
-		${MAKE} ${NAME}
+SRCSF	=  ft_atoi.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_itoa.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_memset.c \
+		ft_calloc.c \
+		ft_putchar_fd.c \
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_striteri.c \
+		ft_bzero.c \
+		ft_strjoin.c \
+		ft_strlen.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strncmp.c \
+		ft_strdup.c \
+		ft_strnstr.c \
+		ft_strrchr.c \
+		ft_substr.c \
+		ft_tolower.c \
+		ft_strmapi.c \
+		ft_split.c \
+		ft_toupper.c 
 
-#bonus:	${OBJS} $(BONUS_OBJS)
-#		${LIBC} $(NAME) ${OBJS} $(BONUS_OBJS)
+SRCSD	=$(addprefix libft/, $(SRCSF))
 
-clean: 
-		${MAKE} clean -C ./libft
-		${RM} ${OBJS}
+LIBFT	= libft/libft.a
+
+OBJS	= ${SRCS:.c=.o}
+
+OBJSD	= ${SRCSF:.c=.o}
+
+CC	= clang
+
+CFLAGS 	= -Wall -Werror -Wextra
+
+RM		= rm -rf
+
+LIBC	= ar rcs
+
+INCS	= ft_printf.h
 
 
-fclean: 
-		${MAKE} fclean -C ./libft 
-		${MAKE} clean
-		${RM} ${NAME}
+${NAME}: libft.a ${OBJS}
+	cp ${LIBFT} .
+	mv libft.a $(NAME)
+	${LIBC} ${NAME} ${OBJS}
+
+all: ${NAME}
+
+clean:
+	${RM} ${OBJS} ${OBJSD} 
+
+libft.a:
+	cd libft && ${MAKE} all
+
+lib_fclean:
+	cd libft && ${MAKE} fclean
+
+fclean: clean lib_fclean
+	${RM} ${NAME}
 
 re: fclean all
+
+.PHONY: all, clean, fclean, re
