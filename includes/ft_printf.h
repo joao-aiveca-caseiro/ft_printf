@@ -6,7 +6,7 @@
 /*   By: jaiveca- <jaiveca-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:14:12 by jaiveca-          #+#    #+#             */
-/*   Updated: 2022/11/03 15:44:29 by jaiveca-         ###   ########.fr       */
+/*   Updated: 2022/11/07 04:28:47 by jaiveca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/libft.h"
 # include <stdarg.h>
+# include <stdio.h>
 
 int	ft_printf(const char *format, ...);
 

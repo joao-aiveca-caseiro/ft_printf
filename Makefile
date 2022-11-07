@@ -30,7 +30,7 @@ clean:
 
 
 fclean: 
-		${MAKE} clean -C ./libft
+		${MAKE} fclean -C ./libft 
 		${MAKE} clean
 		${RM} ${NAME}
 
