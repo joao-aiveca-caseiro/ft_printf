@@ -2,6 +2,9 @@
 NAME	= libftprintf.a
 
 SRCS	= ft_printf.c \
+		ft_printf_char.c \
+		ft_printf_hex.c \
+		ft_printf_num.c
 
 SRCSF	=  ft_atoi.c \
 		ft_isdigit.c \
