@@ -6,7 +6,7 @@
 /*   By: jaiveca- <jaiveca-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:14:12 by jaiveca-          #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:30 by jaiveca-         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:13:50 by jaiveca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ int		ft_printf_hex(char c, long n);
 
 int		ft_printf_hexvoid(unsigned long n);
 
-int		ft_printf_args_char(int i, const char *format, va_list args);
-
-int		ft_printf_args_num(int i, const char *format, va_list args);
-
-int		ft_printf_args_hex(int i, const char *format, va_list args);
-
-int		ft_printf_args_noargs(int i, const char *format);
+int		ft_printf_args(va_list args, char f);
 
 #endif
