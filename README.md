@@ -12,6 +12,6 @@ The goal of this project was to create a simplified version of the C `printf` fu
 - **%x** and **%X** print an integer in base 16 in uppercase and lowercase formats, respectively.
 - **%%** prints a percent sign.
 
-The key learning point of this exercise was about understanding the power of **variadic functions** and their specific syntax. Our `ft_printf` can then be added to our [Libft](github.com/joao-aiveca-caseiro/Libft) library, providing a new tool for printing values besides the ones based on `write`.
+The key learning point of this exercise was about understanding the power of **variadic functions** and their specific syntax. Our `ft_printf` can then be added to our [Libft](https://github.com/joao-aiveca-caseiro/libft) library, providing a new tool for printing values besides the ones based on `write`.
 
 To use `ft_printf` in a project, simply compile the library first using make, then include the executable libftprintf.a in the project's compilation process.
